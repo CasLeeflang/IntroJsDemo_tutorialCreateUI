@@ -29,13 +29,7 @@
 export default {
   name: "CreateTutorial",
   methods: function () {
-    this.$router.push({
-      path: '/pagename',
-      params: {
-        param1: 'value1',
-        param2: 'value2'
-      }
-    });
+
   }
 }
 </script>
