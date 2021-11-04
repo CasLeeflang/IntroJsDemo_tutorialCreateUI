@@ -38,11 +38,16 @@
       </form>
     </div>
 
+
     <div class="p-5">
       <button class="btn btn-outline-success btn-lg p-1" style="width: 10%" v-on:click="save">Save tour</button>
+      <carousel>
+
+
       <tr v-for="(step, index) in newSteps" :key="index">
 
-        <div class="card" style="width: 18rem;">
+        <slide>
+          <div class="card" style="width: 18rem;">
           <div class="card-body">
             <div class="row">
               <div class="col-5">
@@ -72,8 +77,10 @@
             </div>
           </div>
         </div>
+        </slide>
       </tr>
 
+      </carousel>
 
     </div>
   </div>
@@ -81,9 +88,14 @@
 
 <script>
 import axios from 'axios';
+import {Carousel, Slide} from 'vue-carousel';
 
 export default {
   name: "CreateTutorial",
+  components:{
+    Carousel,
+    Slide
+  },
   data() {
     return {
       form: {},
