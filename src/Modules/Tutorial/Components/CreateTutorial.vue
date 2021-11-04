@@ -29,6 +29,7 @@
     </div>
 
     <h2 class="p-3">Existing tutorials</h2>
+
     <tr v-for="(tutorial, index) in existingTutorials" :key="index">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -71,7 +72,6 @@ export default {
   data() {
     return {
       existingTutorials: [],
-
     }
   },
   created() {

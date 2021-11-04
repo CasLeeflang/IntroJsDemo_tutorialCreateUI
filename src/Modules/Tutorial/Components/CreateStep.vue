@@ -111,6 +111,11 @@ export default {
         permission: this.form.permission
       }
       this.newSteps.push(newStep);
+      this.form.title ='';
+      this.form.element ='';
+      this.form.intro='';
+      this.form.permission='';
+
     },
 
     save: function () {
