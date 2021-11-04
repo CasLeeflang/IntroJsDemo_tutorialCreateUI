@@ -30,7 +30,18 @@ const routes = [
     name: 'addSteps',
     component: CreateStep,
     props: true
-
+  },
+  {
+    path: '/addSteps/:title',
+    name: 'addSteps',
+    component: CreateStep,
+    props: true
+  },
+  {
+    path: '/addSteps/:category',
+    name: 'addSteps',
+    component: CreateStep,
+    props: true
   }
 ]
 

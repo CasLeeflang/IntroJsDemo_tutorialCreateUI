@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>New tutorial name: {{this.$route.params.title}}</h1>
-    <h1>New tutorial category:v{{this.$route.params.category}}</h1>
-
+    <h1>New tutorial name: {{ this.$route.params.title }}</h1>
+    <h1>New tutorial category:{{ this.$route.params.category }}</h1>
 
 
     <div>
@@ -40,7 +39,6 @@
     </div>
 
     <div class="p-5">
-      <h2 class="p-1">New tutorial</h2>
       <button class="btn btn-primary btn-lg p-1" style="width: 10%" v-on:click="save">Save tutorial</button>
       <tr v-for="(step, index) in newSteps" :key="index">
 
@@ -76,57 +74,26 @@
         </div>
       </tr>
 
-      <h2 class="p-2">Existing tutorials</h2>
-      <div class="row">
-        <div class="col-sm-3">
-          <tr v-for="(tutorial, index) in existingTutorials" :key="index">
 
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-5">
-                    Title:
-                  </div>
-                  <div class="col-5">
-                    {{ tutorial.title }}
-                  </div>
-                  <div class="col-5">
-                    Number of steps:
-                  </div>
-                  <div class="col-5">
-                    {{ tutorial.steps.length }}
-                  </div>
-                  <div class="col-5">
-                    Category:
-                  </div>
-                  <div class="col-5">
-                    {{ tutorial.category }}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </tr>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
   name: "CreateTutorial",
   data() {
-      return{
-        form: {},
-        newSteps:[],
-        tutorial: {
-          title: this.$route.params.title,
-          steps: null,
-          category: this.$route.params.category
-        },
-        existingTutorials:[],
+    return {
+      form: {},
+      newSteps: [],
+      tutorial: {
+        title: this.$route.params.title,
+        steps: null,
+        category: this.$route.params.category
+      },
+      existingTutorials: [],
 
     }
   },
@@ -149,7 +116,7 @@ export default {
     save: function () {
       this.tutorial.steps = this.newSteps;
       axios.post("http://localhost:9090/api/tutorial/new", this.tutorial)
-      .then(this.$router.push({name: 'Tutorial'}))
+          .then(this.$router.push({name: 'Tutorial'}))
 
     }
   }
