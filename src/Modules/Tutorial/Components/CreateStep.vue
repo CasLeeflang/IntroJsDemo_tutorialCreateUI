@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-outline-success btn-lg p-1" style="width: 10%">Add steps </button>
+          <button class="btn btn-outline-success btn-lg p-1" style="width: 10%">Add steps</button>
         </div>
 
       </form>
@@ -41,46 +41,51 @@
     <div class="d-md-inline-flex flex-column">
       <div class="row">
         <div class="p-5">
-          <tr v-for="(step, index) in newSteps" :key="index">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-5">
-                    Title
-                  </div>
-                  <div class="col-5">
-                    {{ step.title }}
-                  </div>
-                  <div class="col-5">
-                    Element
-                  </div>
-                  <div class="col-5">
-                    {{ step.element }}
-                  </div>
-                  <div class="col-5">
-                    Intro
-                  </div>
-                  <div class="col-5">
-                    {{ step.intro }}
-                  </div>
-                  <div class="col-5">
-                    Permission
-                  </div>
-                  <div class="col-5">
-                    {{ step.permission }}
+          <carousel style="width:100%;">
+            <tr v-for="(step, index) in newSteps" :key="index">
+              <slide>
+                <h3>Step {{index + 1 }}</h3>
+                <div class="card m-2"  style="width: 18rem;">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5">
+                        Title
+                      </div>
+                      <div class="col-5">
+                        {{ step.title }}
+                      </div>
+                      <div class="col-5">
+                        Element
+                      </div>
+                      <div class="col-5">
+                        {{ step.element }}
+                      </div>
+                      <div class="col-5">
+                        Intro
+                      </div>
+                      <div class="col-5">
+                        {{ step.intro }}
+                      </div>
+                      <div class="col-5">
+                        Permission
+                      </div>
+                      <div class="col-5">
+                        {{ step.permission }}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </tr>
+              </slide>
+            </tr>
+
+          </carousel>
         </div>
       </div>
     </div>
 
     <div class="p-5">
       <button class="btn btn-outline-success btn-lg p-1" style="width: 10%" v-on:click="save">Save tour</button>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -90,7 +95,7 @@ import {Carousel, Slide} from 'vue-carousel';
 
 export default {
   name: "CreateTutorial",
-  components:{
+  components: {
     Carousel,
     Slide
   },
@@ -121,10 +126,10 @@ export default {
         permission: this.form.permission
       }
       this.newSteps.push(newStep);
-      this.form.title ='';
-      this.form.element ='';
-      this.form.intro='';
-      this.form.permission='';
+      this.form.title = '';
+      this.form.element = '';
+      this.form.intro = '';
+      this.form.permission = '';
 
     },
 
