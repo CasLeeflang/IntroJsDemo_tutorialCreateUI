@@ -5,33 +5,55 @@
     <div>
       <form id="myForm">
 
-        <div class="form-group">
-          <label>Title</label>
-          <input type="text" id="title">
-        </div>
 
-        <div class="form-group">
-          <label>Category</label>
-          <input name="category" type="text" id="category">
-        </div>
+        <div class="d-md-inline-flex flex-column" style="width: 20%">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+            <input type="text" id="title" class="form-control"
+                   aria-describedby="basic-addon1">
+          </div>
 
-        <button v-on:click="addSteps">Add Steps</button>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Category</span>
+            <input type="text" id="category" class="form-control"
+                   aria-describedby="basic-addon1">
+          </div>
+        </div>
 
 
       </form>
+      <div class="form-group">
+        <button class="btn btn-primary btn-lg" v-on:click="addSteps">Add Steps</button>
+      </div>
     </div>
 
-    <h2>Existing tutorials</h2>
+    <h2 class="p-3">Existing tutorials</h2>
     <tr v-for="(tutorial, index) in existingTutorials" :key="index">
-      <div>
-        Title:
-        <td>{{ tutorial.title }}</td>
-        Number of steps:
-        <td>{{ tutorial.steps.length }}</td>
-        category:
-        <td>{{ tutorial.category }}</td>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-5">
+              Title:
+            </div>
+            <div class="col-5">
+              {{ tutorial.title }}
+            </div>
+            <div class="col-5">
+              Number of steps:
+            </div>
+            <div class="col-5">
+              {{ tutorial.steps.length }}
+            </div>
+            <div class="col-5">
+              Category:
+            </div>
+            <div class="col-5">
+              {{ tutorial.category }}
+            </div>
+          </div>
+        </div>
       </div>
-      <p>--------------------------------------------------------------</p>
     </tr>
 
 
