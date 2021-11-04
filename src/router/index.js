@@ -26,9 +26,11 @@ const routes = [
     component: CreateTutorial
   },
   {
-    path: '/addSteps',
+    path: '/addSteps/:title/:category',
     name: 'addSteps',
-    component: CreateStep
+    component: CreateStep,
+    props: true
+
   }
 ]
 

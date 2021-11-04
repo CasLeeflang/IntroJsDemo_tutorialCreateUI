@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>Create a new tutorial here</h1>
+    <h1>New tutorial name: {{this.$route.params.title}}</h1>
+    <h1>New tutorial category:v{{this.$route.params.category}}</h1>
+
+
+
     <div>
 
       <form id="myForm" v-on:submit.prevent="add">
@@ -28,8 +32,6 @@
                    aria-describedby="basic-addon1" v-model="form.permission">
           </div>
         </div>
-
-
         <div class="form-group">
           <button class="btn btn-primary btn-lg p-1" style="width: 10%">Add</button>
         </div>
@@ -113,19 +115,18 @@
 
 <script>
 import axios from 'axios';
-
 export default {
   name: "CreateTutorial",
   data() {
-    return {
-      form: {},
-      newSteps: [],
-      tutorial: {
-        title: null,
-        steps: null,
-        category: null
-      },
-      existingTutorials: [],
+      return{
+        form: {},
+        newSteps:[],
+        tutorial: {
+          title: this.$route.params.title,
+          steps: null,
+          category: this.$route.params.category
+        },
+        existingTutorials:[],
 
     }
   },
@@ -148,7 +149,7 @@ export default {
     save: function () {
       this.tutorial.steps = this.newSteps;
       axios.post("http://localhost:9090/api/tutorial/new", this.tutorial)
-      location.reload();
+      .then(this.$router.push({name: 'Tutorial'}))
 
     }
   }
