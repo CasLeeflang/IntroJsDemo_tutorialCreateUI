@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Create a new Tutorial</h1>
+    <h1>Create a new tour!</h1>
 
     <div>
       <form id="myForm">
@@ -24,7 +24,7 @@
 
       </form>
       <div class="form-group">
-        <button class="btn btn-primary btn-lg" v-on:click="addSteps">Add Steps</button>
+        <button class="btn btn-outline-success btn-lg" v-on:click="addSteps"> Continue </button>
       </div>
     </div>
 

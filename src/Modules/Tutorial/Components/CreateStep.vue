@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>New tutorial name: {{ this.$route.params.title }}</h1>
-    <h1>New tutorial category:{{ this.$route.params.category }}</h1>
+    <h1>New tour name: {{ this.$route.params.title }}</h1>
+    <h1>New tour category:{{ this.$route.params.category }}</h1>
 
 
     <div>
@@ -32,14 +32,14 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-lg p-1" style="width: 10%">Add</button>
+          <button class="btn btn-outline-success btn-lg p-1" style="width: 10%">Add steps </button>
         </div>
 
       </form>
     </div>
 
     <div class="p-5">
-      <button class="btn btn-primary btn-lg p-1" style="width: 10%" v-on:click="save">Save tutorial</button>
+      <button class="btn btn-outline-success btn-lg p-1" style="width: 10%" v-on:click="save">Save tour</button>
       <tr v-for="(step, index) in newSteps" :key="index">
 
         <div class="card" style="width: 18rem;">
