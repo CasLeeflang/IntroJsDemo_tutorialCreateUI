@@ -38,51 +38,49 @@
       </form>
     </div>
 
+    <div class="d-md-inline-flex flex-column">
+      <div class="row">
+        <div class="p-5">
+          <tr v-for="(step, index) in newSteps" :key="index">
+
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5">
+                    Title
+                  </div>
+                  <div class="col-5">
+                    {{ step.title }}
+                  </div>
+                  <div class="col-5">
+                    Element
+                  </div>
+                  <div class="col-5">
+                    {{ step.element }}
+                  </div>
+                  <div class="col-5">
+                    Intro
+                  </div>
+                  <div class="col-5">
+                    {{ step.intro }}
+                  </div>
+                  <div class="col-5">
+                    Permission
+                  </div>
+                  <div class="col-5">
+                    {{ step.permission }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </div>
+      </div>
+    </div>
 
     <div class="p-5">
       <button class="btn btn-outline-success btn-lg p-1" style="width: 10%" v-on:click="save">Save tour</button>
-      <carousel>
-
-
-      <tr v-for="(step, index) in newSteps" :key="index">
-
-        <slide>
-          <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-5">
-                Title
-              </div>
-              <div class="col-5">
-                {{ step.title }}
-              </div>
-              <div class="col-5">
-                Element
-              </div>
-              <div class="col-5">
-                {{ step.element }}
-              </div>
-              <div class="col-5">
-                Intro
-              </div>
-              <div class="col-5">
-                {{ step.intro }}
-              </div>
-              <div class="col-5">
-                Permission
-              </div>
-              <div class="col-5">
-                {{ step.permission }}
-              </div>
-            </div>
-          </div>
-        </div>
-        </slide>
-      </tr>
-
-      </carousel>
-
-    </div>
+  </div>
   </div>
 </template>
 
